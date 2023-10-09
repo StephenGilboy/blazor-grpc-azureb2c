@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-Gilboy.Web-933F6472-C6F9-492C-A6D4-E9FB00355313</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Protobuf Include="..\Gilboy.Messages\Protos\*.proto" Link="Protos\*.proto" GrpcServices="Client" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.11" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.Identity.Web" Version="2.15.1" />
+        <PackageReference Include="Microsoft.Identity.Web.UI" Version="2.15.1" />
+        <PackageReference Include="Google.Protobuf" Version="3.24.4" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.57.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.58.0" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+</Project>

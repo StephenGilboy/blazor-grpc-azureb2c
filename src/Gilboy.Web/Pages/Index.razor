@@ -1,0 +1,23 @@
+﻿@page "/"
+@using Gilboy.Web.Data
+@inject GreeterWebService GreeterWebService
+
+<PageTitle>Index</PageTitle>
+
+<h1>@_message</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?"/>
+
+@code {
+
+    private string _message = "Getting ready...";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _message = await GreeterWebService.SayHello("Blazor");
+        await base.OnInitializedAsync();
+    }
+
+}
